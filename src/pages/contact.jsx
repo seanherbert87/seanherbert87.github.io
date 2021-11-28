@@ -11,7 +11,7 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Contact Me" />
       <Header metadata={data.site.siteMetadata} />
-      <Form />
+      {/* <Form /> */}
     </Layout>
   );
 };
