@@ -17,15 +17,14 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/seanmherbert/`,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+    about: `Hi, I'm Sean. I'm a Full-Stack Developer that specializes in custom development. Let's build something great!`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
         name: 'Demo Project',
         description: 'Demo Description',
-        link: ''
+        link: '#'
       }
-
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
