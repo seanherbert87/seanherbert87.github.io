@@ -3,7 +3,7 @@ module.exports = {
     // Site URL for when it goes live
     siteUrl: `https://seanherbert.me`,
     // Site path prefix
-    pathPrefix: "/website",
+    //pathPrefix: "/website",
     // Your Name
     name: 'Sean Herbert',
     // Main Site Title
