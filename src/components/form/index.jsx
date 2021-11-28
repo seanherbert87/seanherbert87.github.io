@@ -9,13 +9,13 @@ const Form = ({}) => {
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
             <p>
-                <label>Name: <input type="text" name="name" /></label>
+                <label>Name: <input type="text" name="name" class="block border border-gray-200" /></label>
             </p>
             <p>
-                <label>Email: <input type="text" name="email" /></label>
+                <label>Email: <input type="text" name="email" class="block border border-gray-200" /></label>
             </p>
             <p>
-                <label>Message: <textarea name="message"></textarea></label>
+                <label>Message: <textarea name="message" class="block border border-gray-200"></textarea></label>
             </p>
             <div data-netlify-recaptcha="true"></div>
             <p>
