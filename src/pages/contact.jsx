@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Form from '../components/form';
 
 const Index = ({ data }) => {
   
@@ -11,7 +12,7 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Contact Me" />
       <Header metadata={data.site.siteMetadata} />
-      {/* <Form /> */}
+      <Form />
     </Layout>
   );
 };

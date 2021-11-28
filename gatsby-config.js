@@ -15,15 +15,15 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/seanmherbert/`,
     // Content of the About Me section
-    about: `Hi, I'm Sean. I'm a Full-Stack Developer that specializes in custom development. Let's build something great!`,
+    about: `Hi, I'm Sean. I'm a Full-Stack Developer that specializes in custom development. I love learning new things as well as working with others toward a common goal. Let's get started building something great!`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
-    projects: [
+    projects: null, /*[
       {
         name: 'TBD',
         description: 'TBD',
         link: '#'
       }
-    ],
+    ]*/
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
@@ -42,7 +42,7 @@ module.exports = {
       {
         name: 'Languages & Frameworks',
         description:
-          'PHP, JavaScript, jQuery, React',
+          'PHP, C#, ASP.Net, JavaScript, jQuery, React, Symfony, Laravel, CodeIgniter, NopCommerce, WooCommerce',
       },
       {
         name: 'Databases',
