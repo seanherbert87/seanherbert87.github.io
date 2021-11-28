@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
-    siteUrl: `https://seanherbert.me`,
+    siteUrl: `https://www.seanherbert.me`,
     // Site path prefix
     //pathPrefix: "/website",
     // Your Name
