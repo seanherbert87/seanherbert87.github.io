@@ -4,7 +4,7 @@ import Section from '../section';
 const Form = ({}) => {
     return (
       <Section title="Contact Me">
-        <form name="contact" netlify-honeypot="bot-field" netlify hidden>
+        <form name="contact" netlify-honeypot="bot-field" netlify>
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
