@@ -2,8 +2,6 @@ module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
     siteUrl: `https://www.seanherbert.me`,
-    // Site path prefix
-    //pathPrefix: "/website",
     // Your Name
     name: 'Sean Herbert',
     // Main Site Title
@@ -21,8 +19,8 @@ module.exports = {
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Demo Project',
-        description: 'Demo Description',
+        name: 'TBD',
+        description: 'TBD',
         link: '#'
       }
     ],
@@ -48,7 +46,7 @@ module.exports = {
       },
       {
         name: 'Databases',
-        description: 'MariaDB, MySQL, MS SQL',
+        description: 'MySQL, MariaDB, MS SQL',
       },
       {
         name: 'Other',
