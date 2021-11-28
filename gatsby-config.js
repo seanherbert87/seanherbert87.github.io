@@ -53,7 +53,7 @@ module.exports = {
       {
         name: 'Other',
         description:
-          'Amazon Web Services (AWS), CI / CD, Microservices',
+          'Azure DevOps, Microsoft Teams, CI / CD, Microservices',
       },
     ],
   },
@@ -103,14 +103,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `ADD YOUR TRACKING ID HERE`, // Optional Google Analytics
+        trackingId: `G-6CWHXM7GH2`, // Optional Google Analytics
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `devfolio`,
-        short_name: `devfolio`,
+        name: `seanherbert`,
+        short_name: `seanherbert`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`, // This color appears on mobile
