@@ -4,22 +4,21 @@ import Section from '../section';
 const Form = ({}) => {
     return (
       <Section title="Contact Me">
-        <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+        <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
             <p class="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
             <p>
-                <label>Name: <input type="text" name="name" class="block border border-gray-400" /></label>
+                <label>Name: <input type="text" name="name" class="mb-4 block border border-gray-400" /></label>
             </p>
             <p>
-                <label>Email: <input type="text" name="email" class="block border border-gray-400" /></label>
+                <label>Email: <input type="text" name="email" class="mb-4 block border border-gray-400" /></label>
             </p>
             <p>
-                <label>Message: <textarea name="message" class="block border border-gray-400"></textarea></label>
+                <label>Message: <textarea name="message" class="mb-6 block border border-gray-400"></textarea></label>
             </p>
-            <div data-netlify-recaptcha="true"></div>
             <p>
-                <button type="submit" class="bg-blue-600">Send</button>
+                <button type="submit" class="py-2 px-4 text-white bg-blue-600">Send</button>
             </p>
         </form>
       </Section>
