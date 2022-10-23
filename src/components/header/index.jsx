@@ -2,8 +2,6 @@ import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 
-//import profileImg from '../../images/profile.jpg';
-
 const classes = {
   wrapper: 'block mb-6 md:flex',
   imageWrapper: 'w-full max-w-150',
@@ -60,13 +58,6 @@ const Header = ({ metadata = {}, noBlog = false }) => {
               </a>
             </li>
           )}
-          {/* {!noBlog && (
-            <li className={classes.item}>
-              <Link className={classes.link} to="/blog">
-                Blog
-              </Link>
-            </li>
-          )} */}
           <li className={classes.item}>
             <Link className={classes.link} to="/contact">
               Contact

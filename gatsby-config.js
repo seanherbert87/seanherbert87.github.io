@@ -5,9 +5,9 @@ module.exports = {
     // Your Name
     name: 'Sean Herbert',
     // Main Site Title
-    title: `Sean Herbert | Full-Stack Developer`,
+    title: `Sean Herbert | Web Developer`,
     // Description that goes under your name in main bio
-    description: `Full-Stack Developer`,
+    description: `Web Developer`,
     // Optional: Twitter account handle
     author: ``,
     // Optional: Github account URL
@@ -15,7 +15,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/seanmherbert/`,
     // Content of the About Me section
-    about: `Hi, I'm Sean. I'm a Full-Stack Developer that specializes in custom development. I love learning new things as well as working with others toward a common goal. Let's get started building something great!`,
+    about: `Hi, I'm Sean. I'm a Web Developer that specializes in custom development. I love learning new things as well as working with others toward a common goal. Let's get started building something great!`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: null, /*[
       {
@@ -42,11 +42,11 @@ module.exports = {
       {
         name: 'Languages & Frameworks',
         description:
-          'PHP, C#, ASP.Net, JavaScript, jQuery, React, Symfony, Laravel, CodeIgniter, NopCommerce, WooCommerce',
+          'PHP, C#, ASP.Net, JavaScript, jQuery, React, NextJS, Ionic, Symfony, Laravel, CodeIgniter, NopCommerce, WooCommerce',
       },
       {
         name: 'Databases',
-        description: 'MySQL, MariaDB, MS SQL',
+        description: 'MySQL, MariaDB, MS SQL, NoSQL',
       },
       {
         name: 'Other',
