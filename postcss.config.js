@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    'postcss-plugin': process.env.NODE_ENV === 'production' ? {} : false,
+    'postcss': process.env.NODE_ENV === 'production' ? {} : false,
     'tailwindcss': {},
   },
 }
