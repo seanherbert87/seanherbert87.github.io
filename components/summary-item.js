@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link } from 'next/link';
 import React from 'react';
 
 const classes = {
@@ -10,9 +10,9 @@ const classes = {
 const SummaryItem = ({ name, description, link = false, internal = false }) => {
   let linkContent;
   if (internal) {
-    linkContent = <Link to={link}>{name}</Link>;
+    linkContent = <Link href={link}>{name}</Link>;
   } else {
-    linkContent = <a href={link} target="_blank">{name}</a>;
+    linkContent = <a href={link} target="_blank" rel="nofollow">{name}</a>;
   }
 
   return (

@@ -1,7 +1,6 @@
 import React from 'react';
-
-import Section from '../section';
-import SummaryItem from '../summary-item';
+import Section from './section';
+import SummaryItem from './summary-item';
 
 const SectionExperience = ({ experience }) => {
   if (!experience.length) return null;

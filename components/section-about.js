@@ -1,6 +1,5 @@
 import React from 'react';
-
-import Section from '../section';
+import Section from './section';
 
 const SectionAbout = ({ about }) => {
   return (

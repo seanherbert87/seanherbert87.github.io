@@ -1,3 +1,6 @@
-module.exports = () => ({
-  plugins: [require('tailwindcss')],
-});
+module.exports = {
+  plugins: {
+    'postcss-plugin': process.env.NODE_ENV === 'production' ? {} : false,
+    'tailwindcss': {},
+  },
+}
