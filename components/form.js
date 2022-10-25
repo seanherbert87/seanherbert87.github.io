@@ -7,7 +7,7 @@ const Form = ({}) => {
         <form name="contact" method="POST" encType="application/x-www-form-urlencoded" netlify-honeypot="bot-field" netlify="">
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                <label>Don&apos;t fill this out if you&apos;re human: <input name="bot-field" /></label>
             </p>
             <p>
                 <label>Name: <input type="text" name="name" className="mb-4 block border border-gray-400" /></label>
