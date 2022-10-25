@@ -1,36 +1,24 @@
 {
-  "homepage": "https://www.seanherbert.me",
   "name": "seanherbert.me",
   "version": "0.1.0",
-  "author": "Sean Herbert",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "postcss-cli": "^10.0.0",
-    "react-helmet": "^6.1.0",
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.18",
-    "tailwindcss": "^1.9.6"
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"    
   },
   "devDependencies": {    
     "eslint": "8.26.0",
-    "eslint-config-next": "12.3.1",    
-    "prettier": "2.1.2"    
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seanherbert87/seanherbert87.github.io"
-  },
-  "bugs": {
-    "url": "https://github.com/seanherbert87/seanherbert87.github.io/issues"
+    "eslint-config-next": "12.3.1",
+    "postcss-cli": "^10.0.0",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^1.9.6"
   }
 }

@@ -6,7 +6,7 @@ import SectionExperience from '../components/section-experience';
 import SectionProjects from '../components/section-projects';
 import SectionSkills from '../components/section-skills';
 
-export default function Home({ data }) {
+export default function Home() {
 
   const about = `Hi, I'm Sean. I'm a Web Developer that specializes in custom development. I love learning new things as well as working with others toward a common goal. Let's get started building something great!`;
   const projects = null /*[

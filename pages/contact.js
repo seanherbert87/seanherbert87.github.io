@@ -4,7 +4,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import Form from '../components/form';
 
-const Index = ({ data }) => {
+export default function Contact() {
   
   return (
     <Layout>
@@ -18,5 +18,3 @@ const Index = ({ data }) => {
     </Layout>
   );
 };
-
-export default Index;
