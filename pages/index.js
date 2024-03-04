@@ -18,9 +18,9 @@ export default function Home() {
   ]*/;
   const experience = [
     {
-      name: 'VisionFriendly.com',
+      name: 'Blackbird Digital Inc.',
       description: 'Director of Technology, May 2012 - Present',
-      link: 'https://www.visionfriendly.com',
+      link: 'https://www.blackbird-digital.com',
     },
     {
       name: 'LazerMaxx',
