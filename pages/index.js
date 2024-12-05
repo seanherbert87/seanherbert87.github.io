@@ -8,7 +8,7 @@ import SectionSkills from '../components/section-skills';
 
 export default function Home() {
 
-  const about = `Hi, I'm Sean. I'm a Web Developer that specializes in custom development. I love learning new things as well as working with others toward a common goal. Let's get started building something great!`;
+  const about = `Hi, I'm Sean. I'm a web developer skilled in PHP, C#, and front-end technologies like JavaScript, jQuery, and React. I excel in WordPress and Laravel for CMS development and have experience with e-commerce platforms such as NopCommerce and WooCommerce.`;
   const projects = null /*[
     {
       name: 'TBD',
