@@ -4,7 +4,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import Form from '../components/form';
 
-export default function Contact() {
+const Contact: React.FC = () => {
   
   return (
     <Layout>
@@ -18,3 +18,5 @@ export default function Contact() {
     </Layout>
   );
 };
+
+export default Contact;
