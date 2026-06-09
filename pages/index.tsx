@@ -18,7 +18,7 @@ const SectionSkills = dynamic(() => import('../components/section-skills'), {
 const SITE_URL = 'https://seanherbert.me';
 const FULL_NAME = 'Sean Herbert';
 const JOB_TITLE = 'Senior PHP, WordPress & C#/.NET Developer';
-const META_DESCRIPTION = 'Senior full-stack web developer with 15+ years specializing in PHP, WordPress, C#/.NET, React, and TypeScript. Expert in custom WordPress development, WooCommerce, .NET 10 applications, and modern JavaScript frameworks.';
+const META_DESCRIPTION = 'Senior full-stack developer with 15+ years in PHP, WordPress 7, C#/.NET 10, React & TypeScript. Expert in WooCommerce, ASP.NET Core, PostgreSQL, Supabase & modern web development.';
 
 const Home: React.FC = memo(() => {
   const about = useMemo(() =>
@@ -102,7 +102,7 @@ const Home: React.FC = memo(() => {
     ],
     knowsAbout: [
       'PHP', 'WordPress', 'WooCommerce', 'C#', '.NET', 'ASP.NET Core',
-      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'Laravel', 'Node.js',
+      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'Supabase', 'Laravel', 'Node.js',
     ],
     worksFor: {
       '@type': 'Organization',
@@ -116,7 +116,7 @@ const Home: React.FC = memo(() => {
       <Head>
         <title>{`${FULL_NAME} | ${JOB_TITLE}`}</title>
         <meta name="description" content={META_DESCRIPTION} />
-        <meta name="keywords" content="PHP developer, WordPress developer, C# developer, .NET developer, ASP.NET Core, .NET 10, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
+        <meta name="keywords" content="PHP developer, WordPress developer, WordPress 7, C# developer, .NET developer, ASP.NET Core, .NET 10, PostgreSQL, Supabase, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
         <meta name="author" content={FULL_NAME} />
         <link rel="canonical" href={SITE_URL} />
 
