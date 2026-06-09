@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Section from './section';
-import { ExternalLink, Calendar, MapPin } from 'lucide-react';
+import { ExternalLink, Calendar } from 'lucide-react';
 import { Experience } from '../types';
 
 interface SectionExperienceProps {
@@ -29,7 +29,7 @@ const SectionExperience: React.FC<SectionExperienceProps> = memo(({ experience }
                 </div>
               </div>
               {item.website && (
-                <a 
+                <a
                   href={item.website}
                   target="_blank"
                   rel="noopener noreferrer"

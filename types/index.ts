@@ -7,6 +7,8 @@ export interface Project {
   githubLink?: string;
   technologies: string[];
   featured?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
   image?: {
     url: string;
     alternativeText?: string;
@@ -72,7 +74,6 @@ export interface SummaryItemProps {
   name: string;
   description: string;
 }
-
 
 // Theme and UI types
 export type Theme = 'light' | 'dark';

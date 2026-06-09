@@ -5,7 +5,6 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import { Project, Experience, Skill } from '../types';
 
-// Dynamic imports for better code splitting
 const SectionAbout = dynamic(() => import('../components/section-about'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>
 });
@@ -16,9 +15,13 @@ const SectionSkills = dynamic(() => import('../components/section-skills'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>
 });
 
-const Home: React.FC = memo(() => {
+const SITE_URL = 'https://seanherbert.me';
+const FULL_NAME = 'Sean Herbert';
+const JOB_TITLE = 'Senior PHP & WordPress Developer';
+const META_DESCRIPTION = 'Senior full-stack web developer with 13+ years specializing in PHP, WordPress, React, and TypeScript. Expert in custom WordPress development, WooCommerce, and modern JavaScript frameworks.';
 
-  const about = useMemo(() => 
+const Home: React.FC = memo(() => {
+  const about = useMemo(() =>
     `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2012} years of experience specializing in PHP, WordPress, and modern JavaScript frameworks. I excel at building high-performance websites and web applications, combining the reliability of PHP and WordPress with cutting-edge frontend technologies like React, Next.js, and TypeScript. My expertise includes custom WordPress theme and plugin development, PHP application architecture, database optimization, and creating seamless user experiences. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
     []
   );
@@ -81,13 +84,60 @@ const Home: React.FC = memo(() => {
     },
   ], []);
 
+  const jsonLd = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: FULL_NAME,
+    jobTitle: JOB_TITLE,
+    description: META_DESCRIPTION,
+    url: SITE_URL,
+    image: `${SITE_URL}/profile-photo.jpg`,
+    sameAs: [
+      'https://github.com/seanherbert87/',
+      'https://www.linkedin.com/in/seanmherbert/',
+    ],
+    knowsAbout: [
+      'PHP', 'WordPress', 'WooCommerce', 'React', 'TypeScript',
+      'Next.js', 'JavaScript', 'MySQL', 'Laravel', 'Node.js',
+    ],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Blackbird Digital Inc.',
+      url: 'https://www.blackbird-digital.com',
+    },
+  }), []);
+
   return (
     <Layout>
       <Head>
-        <title>Sean Herbert | Senior PHP & WordPress Developer</title>
-        <meta name="description" content="Senior full-stack web developer with 12+ years specializing in PHP, WordPress, React, and TypeScript. Expert in custom WordPress development, WooCommerce, and modern JavaScript frameworks." />
+        <title>{`${FULL_NAME} | ${JOB_TITLE}`}</title>
+        <meta name="description" content={META_DESCRIPTION} />
         <meta name="keywords" content="PHP developer, WordPress developer, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
-        <meta name="author" content="Sean Herbert" />
+        <meta name="author" content={FULL_NAME} />
+        <link rel="canonical" href={SITE_URL} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:title" content={`${FULL_NAME} | ${JOB_TITLE}`} />
+        <meta property="og:description" content={META_DESCRIPTION} />
+        <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta property="og:image:alt" content={`${FULL_NAME} profile photo`} />
+        <meta property="og:site_name" content={`${FULL_NAME} — Portfolio`} />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter / X Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${FULL_NAME} | ${JOB_TITLE}`} />
+        <meta name="twitter:description" content={META_DESCRIPTION} />
+        <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
+
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
