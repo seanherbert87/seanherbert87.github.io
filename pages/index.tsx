@@ -68,7 +68,7 @@ const Home: React.FC = memo(() => {
   const skills: Skill[] = useMemo(() => [
     {
       name: 'PHP & WordPress Development',
-      description: 'PHP 8.x, WordPress 6.x, Custom Theme Development, Plugin Development, WooCommerce, Advanced Custom Fields (ACF), WordPress REST API, Custom Post Types, WordPress Multisite, Performance Optimization, Security Hardening',
+      description: 'PHP 8.x, WordPress 7.x, Custom Theme Development, Plugin Development, WooCommerce, Advanced Custom Fields (ACF), WordPress REST API, Custom Post Types, WordPress Multisite, Performance Optimization, Security Hardening',
     },
     {
       name: 'C# & .NET Development',
@@ -80,7 +80,7 @@ const Home: React.FC = memo(() => {
     },
     {
       name: 'Backend & Database Technologies',
-      description: 'PHP, Laravel, Node.js, Express.js, C#/.NET, MySQL, MariaDB, MSSQL, SQL Server, Redis, RESTful APIs, GraphQL, Serverless Functions, Google Firebase, Database Design & Optimization',
+      description: 'PHP, Laravel, Node.js, Express.js, C#/.NET, MySQL, MariaDB, MSSQL, SQL Server, PostgreSQL, Supabase, Redis, RESTful APIs, GraphQL, Serverless Functions, Google Firebase, Database Design & Optimization',
     },
     {
       name: 'Cloud & DevOps',
