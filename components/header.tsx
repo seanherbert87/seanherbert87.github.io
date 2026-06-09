@@ -82,7 +82,7 @@ const Header: React.FC = memo(() => {
               Sean Herbert
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
-              Senior PHP &amp; WordPress Developer
+              Senior PHP, WordPress &amp; C#/.NET Developer
             </p>
           </div>
         </div>
@@ -178,16 +178,16 @@ const Header: React.FC = memo(() => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
           <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">
-            {new Date().getFullYear() - 2012}+
+            {new Date().getFullYear() - 2011}+
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
         </div>
         <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">700+</div>
+          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">800+</div>
           <div className="text-sm text-gray-600 dark:text-gray-400">WordPress Sites</div>
         </div>
         <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">300+</div>
+          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">350+</div>
           <div className="text-sm text-gray-600 dark:text-gray-400">WooCommerce Sites</div>
         </div>
         <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">

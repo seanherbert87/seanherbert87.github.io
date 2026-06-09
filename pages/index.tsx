@@ -17,12 +17,12 @@ const SectionSkills = dynamic(() => import('../components/section-skills'), {
 
 const SITE_URL = 'https://seanherbert.me';
 const FULL_NAME = 'Sean Herbert';
-const JOB_TITLE = 'Senior PHP & WordPress Developer';
-const META_DESCRIPTION = 'Senior full-stack web developer with 13+ years specializing in PHP, WordPress, React, and TypeScript. Expert in custom WordPress development, WooCommerce, and modern JavaScript frameworks.';
+const JOB_TITLE = 'Senior PHP, WordPress & C#/.NET Developer';
+const META_DESCRIPTION = 'Senior full-stack web developer with 15+ years specializing in PHP, WordPress, C#/.NET, React, and TypeScript. Expert in custom WordPress development, WooCommerce, .NET 10 applications, and modern JavaScript frameworks.';
 
 const Home: React.FC = memo(() => {
   const about = useMemo(() =>
-    `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2012} years of experience specializing in PHP, WordPress, and modern JavaScript frameworks. I excel at building high-performance websites and web applications, combining the reliability of PHP and WordPress with cutting-edge frontend technologies like React, Next.js, and TypeScript. My expertise includes custom WordPress theme and plugin development, PHP application architecture, database optimization, and creating seamless user experiences. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
+    `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2011} years of experience specializing in PHP, WordPress, C#/.NET, and modern JavaScript frameworks. I excel at building high-performance websites and web applications — from custom WordPress and WooCommerce solutions to enterprise-grade C#/.NET 10 applications using ASP.NET Core. My expertise spans custom WordPress theme and plugin development, PHP application architecture, C#/.NET application development, database optimization, and creating seamless user experiences. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
     []
   );
 
@@ -55,7 +55,7 @@ const Home: React.FC = memo(() => {
     {
       company: 'Blackbird Digital Inc.',
       position: 'Director of Technology, May 2012 - Present',
-      description: 'Leading technology initiatives and driving digital transformation across multiple client projects. Specializing in WordPress development, custom PHP applications, WooCommerce implementations, and modern JavaScript frameworks. Managed teams and delivered scalable solutions for enterprise clients.',
+      description: 'Leading technology initiatives and driving digital transformation across multiple client projects. Specializing in WordPress development, custom PHP applications, WooCommerce implementations, C#/.NET 10 application development using ASP.NET Core, and modern JavaScript frameworks. Managed teams and delivered scalable solutions for enterprise clients.',
       website: 'https://www.blackbird-digital.com',
     },
     {
@@ -71,12 +71,16 @@ const Home: React.FC = memo(() => {
       description: 'PHP 8.x, WordPress 6.x, Custom Theme Development, Plugin Development, WooCommerce, Advanced Custom Fields (ACF), WordPress REST API, Custom Post Types, WordPress Multisite, Performance Optimization, Security Hardening',
     },
     {
+      name: 'C# & .NET Development',
+      description: 'C# 12/13, .NET 10, ASP.NET Core, Web API, Entity Framework Core, Blazor, Razor Pages, Minimal APIs, LINQ, Dependency Injection, xUnit, Azure App Service, SQL Server',
+    },
+    {
       name: 'Modern Frontend Development',
-      description: 'React 18, Next.js 14, TypeScript, JavaScript (ES6+), HTML5, CSS3, Responsive Design',
+      description: 'React 19, Next.js 16, TypeScript, JavaScript (ES6+), HTML5, CSS3, Responsive Design',
     },
     {
       name: 'Backend & Database Technologies',
-      description: 'PHP, Laravel, Node.js, Express.js, MySQL, MariaDB, MSSQL, Redis, RESTful APIs, GraphQL, Serverless Functions, Google Firebase, Database Design & Optimization',
+      description: 'PHP, Laravel, Node.js, Express.js, C#/.NET, MySQL, MariaDB, MSSQL, SQL Server, Redis, RESTful APIs, GraphQL, Serverless Functions, Google Firebase, Database Design & Optimization',
     },
     {
       name: 'Cloud & DevOps',
@@ -97,8 +101,8 @@ const Home: React.FC = memo(() => {
       'https://www.linkedin.com/in/seanmherbert/',
     ],
     knowsAbout: [
-      'PHP', 'WordPress', 'WooCommerce', 'React', 'TypeScript',
-      'Next.js', 'JavaScript', 'MySQL', 'Laravel', 'Node.js',
+      'PHP', 'WordPress', 'WooCommerce', 'C#', '.NET', 'ASP.NET Core',
+      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'Laravel', 'Node.js',
     ],
     worksFor: {
       '@type': 'Organization',
@@ -112,7 +116,7 @@ const Home: React.FC = memo(() => {
       <Head>
         <title>{`${FULL_NAME} | ${JOB_TITLE}`}</title>
         <meta name="description" content={META_DESCRIPTION} />
-        <meta name="keywords" content="PHP developer, WordPress developer, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
+        <meta name="keywords" content="PHP developer, WordPress developer, C# developer, .NET developer, ASP.NET Core, .NET 10, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
         <meta name="author" content={FULL_NAME} />
         <link rel="canonical" href={SITE_URL} />
 
