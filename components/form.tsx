@@ -93,20 +93,20 @@ const Form: React.FC = () => {
     <Section title="Contact Me">
       <div className="max-w-2xl mx-auto">
         {submitStatus === 'success' && (
-          <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
+          <div className="mb-6 p-4 border border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 rounded-sm">
             Thank you for your message! I&apos;ll get back to you soon.
           </div>
         )}
 
         {submitStatus === 'error' && (
-          <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">
+          <div className="mb-6 p-4 border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-200 rounded-sm">
             Sorry, there was an error sending your message. Please try again or contact me directly.
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="name" className="block font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
               Name *
             </label>
             <input
@@ -115,7 +115,7 @@ const Form: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Your full name"
@@ -124,7 +124,7 @@ const Form: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="email" className="block font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
               Email *
             </label>
             <input
@@ -133,7 +133,7 @@ const Form: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="your.email@example.com"
@@ -142,7 +142,7 @@ const Form: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="subject" className="block font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
               Subject *
             </label>
             <input
@@ -151,7 +151,7 @@ const Form: React.FC = () => {
               name="subject"
               value={formData.subject}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.subject ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="What&apos;s this about?"
@@ -160,7 +160,7 @@ const Form: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label htmlFor="message" className="block font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
               Message *
             </label>
             <textarea
@@ -169,7 +169,7 @@ const Form: React.FC = () => {
               value={formData.message}
               onChange={handleInputChange}
               rows={6}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder=""
@@ -180,7 +180,7 @@ const Form: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full py-3 px-4 bg-primary-700 hover:bg-primary-800 disabled:bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 text-white font-mono text-sm uppercase tracking-wider rounded-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>

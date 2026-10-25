@@ -54,6 +54,13 @@ const Header: React.FC = memo(() => {
     { href: '/contact', icon: Mail, label: 'Email' },
   ];
 
+  const stats = [
+    { value: `${new Date().getFullYear() - 2011}+`, label: 'Years Experience' },
+    { value: '800+', label: 'WordPress Sites' },
+    { value: '350+', label: 'WooCommerce Sites' },
+    { value: '100%', label: 'Client Satisfaction' },
+  ];
+
   return (
     <header className="mb-12">
       <div className="flex items-center justify-between mb-8">
@@ -61,52 +68,52 @@ const Header: React.FC = memo(() => {
         <div className="flex items-center space-x-6">
           <Link href="/" className="group">
             <div className="relative">
-              <div className="w-20 h-20 rounded-full border-4 border-white dark:border-gray-800 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 dark:from-gray-700 dark:to-black flex items-center justify-center">
+              <div className="w-20 h-20 rounded-md p-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 group-hover:border-primary-400 dark:group-hover:border-primary-700 transition-colors duration-300 overflow-hidden flex items-center justify-center">
                 <Image
                   src="/profile-photo.jpg"
                   alt="Sean Herbert"
                   width={80}
                   height={80}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-sm grayscale-[15%]"
                   priority
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
               </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-gray-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-sm bg-primary-400 dark:bg-primary-500 border-2 border-gray-50 dark:border-gray-950" aria-hidden="true"></span>
             </div>
           </Link>
 
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+            <h1 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white mb-1">
               Sean Herbert
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
+            <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
               Senior PHP, WordPress &amp; C#/.NET Developer
             </p>
           </div>
         </div>
 
         {/* Desktop Navigation & Controls */}
-        <div className="hidden md:flex items-center space-x-6">
-          <div className="flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-2">
+          <div className="flex items-center space-x-2">
             {socialLinks.map(({ href, icon: Icon, label }) => {
               const isExternal = href.startsWith('http');
               const linkProps = {
-                className: "p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg",
+                className: "p-2 text-gray-600 dark:text-gray-400 hover:text-primary-700 dark:hover:text-primary-300 border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-800 bg-white/60 dark:bg-gray-900/60 transition-colors duration-200 rounded-sm",
                 'aria-label': label
               };
 
               if (isExternal) {
                 return (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4" />
                   </a>
                 );
               } else {
                 return (
                   <Link key={label} href={href} {...linkProps}>
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4" />
                   </Link>
                 );
               }
@@ -115,7 +122,7 @@ const Header: React.FC = memo(() => {
 
           <button
             onClick={toggleDarkMode}
-            className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+            className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-700 dark:hover:text-primary-300 border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-800 bg-white/60 dark:bg-gray-900/60 transition-colors duration-200 rounded-sm"
             aria-label="Toggle dark mode"
           >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -134,9 +141,9 @@ const Header: React.FC = memo(() => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 mb-6">
+        <div className="md:hidden bg-white dark:bg-gray-900 rounded-md border border-gray-200 dark:border-gray-800 p-4 mb-6">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Navigation</span>
+            <span className="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">Navigation</span>
             <button
               onClick={toggleDarkMode}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -150,22 +157,22 @@ const Header: React.FC = memo(() => {
             {socialLinks.map(({ href, icon: Icon, label }) => {
               const isExternal = href.startsWith('http');
               const linkProps = {
-                className: "flex items-center space-x-2 p-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg flex-1 justify-center",
+                className: "flex items-center space-x-2 p-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:bg-primary-50 dark:hover:bg-gray-800 rounded-sm flex-1 justify-center",
                 'aria-label': label
               };
 
               if (isExternal) {
                 return (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
-                    <Icon className="w-5 h-5" />
-                    <span className="text-sm font-medium">{label}</span>
+                    <Icon className="w-4 h-4" />
+                    <span className="font-mono text-xs">{label}</span>
                   </a>
                 );
               } else {
                 return (
                   <Link key={label} href={href} {...linkProps}>
-                    <Icon className="w-5 h-5" />
-                    <span className="text-sm font-medium">{label}</span>
+                    <Icon className="w-4 h-4" />
+                    <span className="font-mono text-xs">{label}</span>
                   </Link>
                 );
               }
@@ -175,26 +182,14 @@ const Header: React.FC = memo(() => {
       )}
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">
-            {new Date().getFullYear() - 2011}+
+      <dl className="grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-200 dark:bg-gray-800 rounded-md">
+        {stats.map(({ value, label }) => (
+          <div key={label} className="px-5 py-4 bg-white dark:bg-gray-900">
+            <dt className="font-mono text-[0.7rem] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">{label}</dt>
+            <dd className="font-mono text-2xl font-medium text-primary-700 dark:text-primary-300">{value}</dd>
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">800+</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">WordPress Sites</div>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">350+</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">WooCommerce Sites</div>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-800">
-          <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">100%</div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
-        </div>
-      </div>
+        ))}
+      </dl>
     </header>
   );
 });
