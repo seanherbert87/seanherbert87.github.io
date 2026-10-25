@@ -6,13 +6,13 @@ import Layout from '../components/layout';
 import { Project, Experience, Skill } from '../types';
 
 const SectionAbout = dynamic(() => import('../components/section-about'), {
-  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
 const SectionExperience = dynamic(() => import('../components/section-experience'), {
-  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
 const SectionSkills = dynamic(() => import('../components/section-skills'), {
-  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
 
 const SITE_URL = 'https://seanherbert.me';
@@ -145,16 +145,16 @@ const Home: React.FC = memo(() => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>}>
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {about && <SectionAbout about={about} />}
       </Suspense>
       {/*{projects && projects.length && <SectionProjects projects={projects} />}*/}
-      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>}>
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {experience && experience.length && (
           <SectionExperience experience={experience} />
         )}
       </Suspense>
-      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-32 rounded-lg mb-8"></div>}>
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {skills && skills.length && <SectionSkills skills={skills} />}
       </Suspense>
     </Layout>

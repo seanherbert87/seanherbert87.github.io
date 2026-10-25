@@ -11,9 +11,39 @@ html {
 }
 
 body {
+  @apply bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-200;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  @apply bg-primary-200 text-gray-900 dark:bg-primary-800 dark:text-white;
+}
+
+/* Faint blueprint grid that fades out toward the bottom of the viewport */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(var(--grid-line)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--grid-line)) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 70%);
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+  --grid-line: 132 170 120 / 0.14;
+}
+
+.dark .bg-grid {
+  --grid-line: 132 170 120 / 0.06;
+}
+
+/* Auto-numbered section indices: 01, 02, 03 ... */
+main {
+  counter-reset: section;
+}
+
+.section-index::before {
+  counter-increment: section;
+  content: counter(section, decimal-leading-zero);
 }
 
 @media (prefers-reduced-motion: reduce) {

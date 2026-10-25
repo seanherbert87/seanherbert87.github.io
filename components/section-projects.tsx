@@ -22,11 +22,11 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
         {projects.map((project, index) => (
           <div
             key={project.id || index}
-            className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800 group"
+            className="bg-white/70 dark:bg-gray-900/60 rounded-md p-6 border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-800 transition-colors duration-300 group"
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                   {project.name}
                 </h3>
                 <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
@@ -66,11 +66,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
               {project.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    index === 0 
-                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
-                      : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
-                  }`}
+                  className="px-2.5 py-1 border border-primary-200 dark:border-primary-900 bg-primary-50 dark:bg-primary-900/20 text-primary-800 dark:text-primary-200 rounded-sm font-mono text-xs"
                 >
                   {tech}
                 </span>
