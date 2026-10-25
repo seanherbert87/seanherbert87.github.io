@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from './section';
-import { ExternalLink, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar, Lock } from 'lucide-react';
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -31,7 +31,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                 </h3>
                 <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
                   <Calendar className="w-4 h-4 mr-2" />
-                  <span className="text-sm">2024</span>
+                  <span className="text-sm">{project.year}</span>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -46,15 +46,23 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 )}
-                <a
-                  href={project.githubLink || "https://github.com/seanherbert87"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="View source code on GitHub"
-                >
-                  <GithubIcon className="w-5 h-5" />
-                </a>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    aria-label="View source code on GitHub"
+                  >
+                    <GithubIcon className="w-5 h-5" />
+                  </a>
+                )}
+                {project.caseStudy && (
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                    <Lock className="w-3 h-3" aria-hidden="true" />
+                    Case study
+                  </span>
+                )}
               </div>
             </div>
             
@@ -66,11 +74,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
               {project.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    index === 0 
-                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
-                      : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
-                  }`}
+                  className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
                 >
                   {tech}
                 </span>

@@ -21,6 +21,9 @@ const SectionAbout: React.FC<SectionAboutProps> = memo(({ about }) => {
                    React & TypeScript
                  </span>
                  <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                   C# & .NET
+                 </span>
+                 <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
                    Custom Development
                  </span>
                </div>
