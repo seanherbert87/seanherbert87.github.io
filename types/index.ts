@@ -7,6 +7,8 @@ export interface Project {
   githubLink?: string;
   technologies: string[];
   featured?: boolean;
+  year?: string;
+  caseStudy?: boolean; // private project shown without links
   createdAt?: string;
   updatedAt?: string;
   image?: {
