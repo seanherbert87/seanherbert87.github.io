@@ -5,7 +5,7 @@ interface SectionAboutProps {
   about: string;
 }
 
-const tags = ['PHP & WordPress', 'WooCommerce','React & TypeScript', 'Custom Development'];
+const tags = ['PHP & WordPress', 'WooCommerce', 'React & TypeScript', 'C# & .NET', 'Custom Development'];
 
 const SectionAbout: React.FC<SectionAboutProps> = memo(({ about }) => {
   return (

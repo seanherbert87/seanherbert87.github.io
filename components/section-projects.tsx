@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from './section';
-import { ExternalLink, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar, Lock } from 'lucide-react';
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -26,12 +26,12 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+                <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-1 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                   {project.name}
                 </h3>
-                <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  <span className="text-sm">2024</span>
+                <div className="flex items-center text-gray-500 dark:text-gray-400 mb-3">
+                  <Calendar className="w-3.5 h-3.5 mr-2 shrink-0" strokeWidth={1.5} />
+                  <span className="font-mono text-xs">{project.year}</span>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -40,25 +40,33 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="p-2 rounded-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
                     aria-label={`Visit ${project.name} website`}
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                   </a>
                 )}
-                <a
-                  href={project.githubLink || "https://github.com/seanherbert87"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="View source code on GitHub"
-                >
-                  <GithubIcon className="w-5 h-5" />
-                </a>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+                    aria-label="View source code on GitHub"
+                  >
+                    <GithubIcon className="w-4 h-4" />
+                  </a>
+                )}
+                {project.caseStudy && (
+                  <span className="inline-flex items-center gap-1 px-2 py-1 border border-gray-200 dark:border-gray-800 rounded-sm font-mono text-xs text-gray-600 dark:text-gray-400">
+                    <Lock className="w-3 h-3" aria-hidden="true" />
+                    Case study
+                  </span>
+                )}
               </div>
             </div>
             
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
               {project.description}
             </p>
             

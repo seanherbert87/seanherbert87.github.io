@@ -8,6 +8,9 @@ import { Project, Experience, Skill } from '../types';
 const SectionAbout = dynamic(() => import('../components/section-about'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
+const SectionProjects = dynamic(() => import('../components/section-projects'), {
+  loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
+});
 const SectionExperience = dynamic(() => import('../components/section-experience'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
@@ -22,33 +25,47 @@ const META_DESCRIPTION = 'Senior full-stack developer with 15+ years in PHP, Wor
 
 const Home: React.FC = memo(() => {
   const about = useMemo(() =>
-    `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2011} years of experience specializing in PHP, WordPress, C#/.NET, and modern JavaScript frameworks. I excel at building high-performance websites and web applications — from custom WordPress and WooCommerce solutions to enterprise-grade C#/.NET 10 applications using ASP.NET Core. My expertise spans custom WordPress theme and plugin development, PHP application architecture, C#/.NET application development, database optimization, and creating seamless user experiences. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
+    `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2011} years of experience specializing in PHP, WordPress, C#/.NET, and modern JavaScript frameworks. I excel at building high-performance websites and web applications — from custom WordPress and WooCommerce solutions to enterprise-grade C#/.NET 10 applications using ASP.NET Core. My expertise spans custom WordPress theme and plugin development, PHP application architecture, C#/.NET application development, database optimization, and creating seamless user experiences. Recently I've been building privacy-first, self-hosted products: WordPress plugins that run entirely from a site's own server, a .NET-powered media organizer, and a cross-platform health tracker on Next.js, Supabase, and Flutter. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
     []
   );
 
   const projects: Project[] = useMemo(() => [
-    /*{
+    {
       id: 1,
-      name: 'Custom WordPress E-Commerce Solution',
-      description: 'A high-performance WooCommerce-based e-commerce platform with custom PHP plugins, advanced product filtering, payment gateway integration, and mobile-responsive design. Achieved 40% faster page load times through database optimization and caching strategies.',
-      link: 'https://github.com/seanherbert87/wordpress-ecommerce',
-      githubLink: 'https://github.com/seanherbert87/wordpress-ecommerce',
-      technologies: ['WordPress', 'WooCommerce', 'PHP', 'MySQL'],
+      name: 'WP Local Consent',
+      description: 'A WordPress cookie consent plugin and script blocker that renders entirely from the site\'s own assets, with no third-party domain calls. The banner ships under 10 KB of JavaScript, fires Google Consent Mode v2 signals, and is backed by a measured performance benchmark, Lighthouse CI size budgets, and a security review of the consent log. Includes agency and multi-site tooling and a Pro companion plugin.',
+      link: 'https://wplocalconsent.com',
+      technologies: ['PHP', 'WordPress', 'JavaScript', 'Lighthouse CI', 'GitHub Actions'],
       featured: true,
-      createdAt: '2024-01-01',
-      updatedAt: '2024-01-01'
+      year: '2026',
     },
     {
       id: 2,
-      name: 'Headless WordPress with React Frontend',
-      description: 'A modern decoupled architecture using WordPress as a headless CMS with a React/Next.js frontend. Features include custom REST API endpoints, real-time content updates, and TypeScript integration for enhanced developer experience.',
-      link: 'https://github.com/seanherbert87/headless-wordpress-react',
-      githubLink: 'https://github.com/seanherbert87/headless-wordpress-react',
-      technologies: ['WordPress', 'React', 'Next.js', 'TypeScript'],
+      name: 'WP Local Accessibility',
+      description: 'A WordPress accessibility toolkit that runs entirely on the site\'s own server: a visitor-facing toolbar, an on-site accessibility scanner, and an auto-generated accessibility statement. No CDN assets, no third-party audit APIs, and no telemetry. Shipped with its own brand system and a static brochure site.',
+      link: 'https://wplocalaccessibility.com',
+      technologies: ['PHP', 'WordPress', 'JavaScript', 'WCAG', 'Netlify'],
       featured: true,
-      createdAt: '2024-01-01',
-      updatedAt: '2024-01-01'
-    }*/
+      year: '2026',
+    },
+    {
+      id: 3,
+      name: 'PixelVault',
+      description: 'A self-hosted, privacy-first photo and video organizer with albums, hierarchical tags, ratings, captions, perceptual-hash duplicate detection, and non-destructive editing. Everything stays on the owner\'s hardware, with signed media URLs, Argon2id and mandatory TOTP authentication, a PIN-gated private area, and secure remote access over Tailscale. Delivered as an ASP.NET Core service with web, desktop, and mobile clients.',
+      technologies: ['C#', '.NET 10', 'ASP.NET Core', 'Tailscale', 'ffmpeg'],
+      featured: true,
+      caseStudy: true,
+      year: '2026',
+    },
+    {
+      id: 4,
+      name: 'MedTrack',
+      description: 'A personal medication efficacy tracker for logging mood, efficacy, dosage, and side effects, with reports that compare treatments over time. A Next.js web app on Supabase (PostgreSQL, auth, and sync) shares business logic with native Flutter apps for iOS, Android, macOS, and Windows.',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Flutter'],
+      featured: true,
+      caseStudy: true,
+      year: '2026',
+    },
   ], []);
 
   const experience: Experience[] = useMemo(() => [
@@ -83,8 +100,12 @@ const Home: React.FC = memo(() => {
       description: 'PHP, Laravel, Node.js, Express.js, C#/.NET, MySQL, MariaDB, MSSQL, SQL Server, PostgreSQL, Supabase, Redis, RESTful APIs, GraphQL, Serverless Functions, Google Firebase, Database Design & Optimization',
     },
     {
+      name: 'Mobile & Cross-Platform',
+      description: 'Flutter, Dart, shared business logic across web, iOS, Android, macOS and Windows, Supabase auth & sync',
+    },
+    {
       name: 'Cloud & DevOps',
-      description: 'WP Engine, Vercel, Netlify, Git, GitHub Actions, CI/CD, Jest, ESLint, Prettier, Webpack, Vite, Performance Monitoring',
+      description: 'WP Engine, Vercel, Netlify, Docker, Tailscale, Git, GitHub Actions, CI/CD, Lighthouse CI, Jest, ESLint, Prettier, Webpack, Vite, Performance Monitoring',
     },
   ], []);
 
@@ -102,7 +123,7 @@ const Home: React.FC = memo(() => {
     ],
     knowsAbout: [
       'PHP', 'WordPress', 'WooCommerce', 'C#', '.NET', 'ASP.NET Core',
-      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'Supabase', 'Laravel', 'Node.js',
+      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'Supabase', 'Laravel', 'Node.js', 'Flutter', 'Docker',
     ],
     worksFor: {
       '@type': 'Organization',
@@ -116,7 +137,7 @@ const Home: React.FC = memo(() => {
       <Head>
         <title>{`${FULL_NAME} | ${JOB_TITLE}`}</title>
         <meta name="description" content={META_DESCRIPTION} />
-        <meta name="keywords" content="PHP developer, WordPress developer, WordPress 7, C# developer, .NET developer, ASP.NET Core, .NET 10, PostgreSQL, Supabase, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js" />
+        <meta name="keywords" content="PHP developer, WordPress developer, WordPress 7, C# developer, .NET developer, ASP.NET Core, .NET 10, PostgreSQL, Supabase, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js, Flutter, WordPress plugin developer, cookie consent, web accessibility" />
         <meta name="author" content={FULL_NAME} />
         <link rel="canonical" href={SITE_URL} />
 
@@ -148,7 +169,9 @@ const Home: React.FC = memo(() => {
       <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {about && <SectionAbout about={about} />}
       </Suspense>
-      {/*{projects && projects.length && <SectionProjects projects={projects} />}*/}
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
+        {projects.length > 0 && <SectionProjects projects={projects} />}
+      </Suspense>
       <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {experience && experience.length && (
           <SectionExperience experience={experience} />
