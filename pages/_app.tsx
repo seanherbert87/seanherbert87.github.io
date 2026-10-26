@@ -1,6 +1,21 @@
 import '../styles/globals.css'
 import { AppProps } from 'next/app'
 import { useEffect } from 'react'
+import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
+
+const sans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const mono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -20,7 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  return <Component {...pageProps} />
+  return (
+    <div className={`${sans.variable} ${mono.variable} font-sans`}>
+      <Component {...pageProps} />
+    </div>
+  )
 }
 
 export default MyApp

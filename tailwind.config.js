@@ -6,35 +6,49 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    // Tighter corners site-wide
+    borderRadius: {
+      none: '0',
+      sm: '1px',
+      DEFAULT: '2px',
+      md: '3px',
+      lg: '4px',
+      xl: '6px',
+      full: '9999px',
+    },
     extend: {
       colors: {
+        // Pale sage accent
         primary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
+          50: '#f2f7f0',
+          100: '#e4efe0',
+          200: '#cbe0c3',
+          300: '#a9cb9e',
+          400: '#84b077',
+          500: '#649458',
+          600: '#4e7744',
+          700: '#3f5f38',
+          800: '#344d2f',
+          900: '#2b3f28',
         },
+        // Green-tinted neutrals
         gray: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
+          50: '#f4f7f2',
+          100: '#ebf0e8',
+          200: '#dce4d8',
+          300: '#c5d0c0',
+          400: '#98a692',
+          500: '#6e7c69',
+          600: '#525e4f',
+          700: '#3c463a',
+          800: '#252c24',
+          900: '#171c16',
+          950: '#0f130e',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -55,4 +69,3 @@ module.exports = {
   },
   plugins: [],
 };
-  
