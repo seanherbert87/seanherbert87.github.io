@@ -18,7 +18,7 @@ const SectionSkills = dynamic(() => import('../components/section-skills'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
 });
 
-const SITE_URL = 'https://seanherbert.me';
+const SITE_URL = 'https://www.seanherbert.me';
 const FULL_NAME = 'Sean Herbert';
 const JOB_TITLE = 'Senior PHP, WordPress & C#/.NET Developer';
 const META_DESCRIPTION = 'Senior full-stack developer with 15+ years in PHP, WordPress 7, C#/.NET 10, React & TypeScript. Expert in WooCommerce, ASP.NET Core, PostgreSQL, Supabase & modern web development.';
@@ -109,28 +109,66 @@ const Home: React.FC = memo(() => {
     },
   ], []);
 
-  const jsonLd = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: FULL_NAME,
-    jobTitle: JOB_TITLE,
-    description: META_DESCRIPTION,
-    url: SITE_URL,
-    image: `${SITE_URL}/profile-photo.jpg`,
-    sameAs: [
-      'https://github.com/seanherbert87/',
-      'https://www.linkedin.com/in/seanmherbert/',
-    ],
-    knowsAbout: [
-      'PHP', 'WordPress', 'WooCommerce', 'C#', '.NET', 'ASP.NET Core',
-      'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'Supabase', 'Laravel', 'Node.js', 'Flutter', 'Docker',
-    ],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Blackbird Digital Inc.',
-      url: 'https://www.blackbird-digital.com',
-    },
-  }), []);
+  const jsonLd = useMemo(() => {
+    const personId = `${SITE_URL}/#person`;
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          '@id': `${SITE_URL}/#website`,
+          url: SITE_URL,
+          name: `${FULL_NAME} — Portfolio`,
+          inLanguage: 'en',
+          publisher: { '@id': personId },
+        },
+        {
+          '@type': 'ProfilePage',
+          '@id': `${SITE_URL}/#profilepage`,
+          url: SITE_URL,
+          name: `${FULL_NAME} | ${JOB_TITLE}`,
+          description: META_DESCRIPTION,
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          mainEntity: { '@id': personId },
+        },
+        {
+          '@type': 'Person',
+          '@id': personId,
+          name: FULL_NAME,
+          jobTitle: JOB_TITLE,
+          description: META_DESCRIPTION,
+          url: SITE_URL,
+          image: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}/profile-photo.jpg`,
+            width: 500,
+            height: 500,
+          },
+          sameAs: [
+            'https://github.com/seanherbert87/',
+            'https://www.linkedin.com/in/seanmherbert/',
+          ],
+          knowsAbout: [
+            'PHP', 'WordPress', 'WooCommerce', 'C#', '.NET', 'ASP.NET Core',
+            'React', 'TypeScript', 'Next.js', 'JavaScript', 'MySQL', 'PostgreSQL', 'Supabase', 'Laravel', 'Node.js', 'Flutter', 'Docker',
+          ],
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Blackbird Digital Inc.',
+            url: 'https://www.blackbird-digital.com',
+          },
+        },
+        ...projects.map((project) => ({
+          '@type': 'SoftwareApplication',
+          name: project.name,
+          description: project.description,
+          applicationCategory: 'DeveloperApplication',
+          ...(project.link ? { url: project.link } : {}),
+          author: { '@id': personId },
+        })),
+      ],
+    };
+  }, [projects]);
 
   return (
     <Layout>
@@ -139,6 +177,7 @@ const Home: React.FC = memo(() => {
         <meta name="description" content={META_DESCRIPTION} />
         <meta name="keywords" content="PHP developer, WordPress developer, WordPress 7, C# developer, .NET developer, ASP.NET Core, .NET 10, PostgreSQL, Supabase, full-stack developer, React developer, TypeScript, WooCommerce, custom WordPress themes, WordPress plugins, Laravel, MySQL, JavaScript, Next.js, Flutter, WordPress plugin developer, cookie consent, web accessibility" />
         <meta name="author" content={FULL_NAME} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={SITE_URL} />
 
         {/* Open Graph */}
@@ -147,6 +186,8 @@ const Home: React.FC = memo(() => {
         <meta property="og:title" content={`${FULL_NAME} | ${JOB_TITLE}`} />
         <meta property="og:description" content={META_DESCRIPTION} />
         <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
         <meta property="og:image:alt" content={`${FULL_NAME} profile photo`} />
         <meta property="og:site_name" content={`${FULL_NAME} — Portfolio`} />
         <meta property="og:locale" content="en_US" />
