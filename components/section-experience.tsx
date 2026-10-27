@@ -23,7 +23,7 @@ const SectionExperience: React.FC<SectionExperienceProps> = memo(({ experience }
                        <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-1 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                          {item.company}
                        </h3>
-                <div className="flex items-center text-gray-500 dark:text-gray-400 mb-3">
+                <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
                   <Calendar className="w-3.5 h-3.5 mr-2 shrink-0" strokeWidth={1.5} />
                   <span className="font-mono text-xs">{item.position}</span>
                 </div>
@@ -33,7 +33,7 @@ const SectionExperience: React.FC<SectionExperienceProps> = memo(({ experience }
                   href={item.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-4 p-2 rounded-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+                  className="ml-4 p-2 rounded-sm text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
                   aria-label={`Visit ${item.company} website`}
                 >
                   <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
