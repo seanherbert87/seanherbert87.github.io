@@ -70,7 +70,7 @@ const Header: React.FC = memo(() => {
             <div className="relative">
               <div className="w-20 h-20 rounded-md p-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 group-hover:border-primary-400 dark:group-hover:border-primary-700 transition-colors duration-300 overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/profile-photo.jpg"
+                  src="/profile-photo-160.jpg"
                   alt="Sean Herbert"
                   width={80}
                   height={80}
@@ -143,7 +143,7 @@ const Header: React.FC = memo(() => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 rounded-md border border-gray-200 dark:border-gray-800 p-4 mb-6">
           <div className="flex items-center justify-between mb-4">
-            <span className="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">Navigation</span>
+            <span className="font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">Navigation</span>
             <button
               onClick={toggleDarkMode}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -185,7 +185,7 @@ const Header: React.FC = memo(() => {
       <dl className="grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-200 dark:bg-gray-800 rounded-md">
         {stats.map(({ value, label }) => (
           <div key={label} className="px-5 py-4 bg-white dark:bg-gray-900">
-            <dt className="font-mono text-[0.7rem] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">{label}</dt>
+            <dt className="font-mono text-[0.7rem] uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-1">{label}</dt>
             <dd className="font-mono text-2xl font-medium text-primary-700 dark:text-primary-300">{value}</dd>
           </div>
         ))}
