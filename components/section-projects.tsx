@@ -29,7 +29,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                 <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-1 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                   {project.name}
                 </h3>
-                <div className="flex items-center text-gray-500 dark:text-gray-400 mb-3">
+                <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
                   <Calendar className="w-3.5 h-3.5 mr-2 shrink-0" strokeWidth={1.5} />
                   <span className="font-mono text-xs">{project.year}</span>
                 </div>
@@ -40,7 +40,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+                    className="p-2 rounded-sm text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
                     aria-label={`Visit ${project.name} website`}
                   >
                     <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
@@ -51,7 +51,7 @@ const SectionProjects: React.FC<SectionProjectsProps> = ({ projects }) => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+                    className="p-2 rounded-sm text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
                     aria-label="View source code on GitHub"
                   >
                     <GithubIcon className="w-4 h-4" />

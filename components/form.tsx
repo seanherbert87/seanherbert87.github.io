@@ -115,7 +115,7 @@ const Form: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Your full name"
@@ -133,7 +133,7 @@ const Form: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="your.email@example.com"
@@ -151,7 +151,7 @@ const Form: React.FC = () => {
               name="subject"
               value={formData.subject}
               onChange={handleInputChange}
-              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.subject ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="What&apos;s this about?"
@@ -169,7 +169,7 @@ const Form: React.FC = () => {
               value={formData.message}
               onChange={handleInputChange}
               rows={6}
-              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
+              className={`w-full px-3 py-2 border rounded-sm bg-white dark:bg-gray-900 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 dark:border-gray-700 dark:text-white ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder=""
