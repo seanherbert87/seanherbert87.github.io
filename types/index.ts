@@ -8,7 +8,8 @@ export interface Project {
   technologies: string[];
   featured?: boolean;
   year?: string;
-  caseStudy?: boolean; // private project shown without links
+  caseStudy?: boolean; // private project shown without external links
+  caseStudyPath?: string; // internal case-study page, e.g. /projects/pixelvault
   createdAt?: string;
   updatedAt?: string;
   image?: {

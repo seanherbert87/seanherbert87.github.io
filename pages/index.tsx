@@ -55,6 +55,7 @@ const Home: React.FC = memo(() => {
       technologies: ['C#', '.NET 10', 'ASP.NET Core', 'Tailscale', 'ffmpeg'],
       featured: true,
       caseStudy: true,
+      caseStudyPath: '/projects/pixelvault',
       year: '2026',
     },
     {
@@ -64,6 +65,7 @@ const Home: React.FC = memo(() => {
       technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Flutter'],
       featured: true,
       caseStudy: true,
+      caseStudyPath: '/projects/medtrack',
       year: '2026',
     },
   ], []);
@@ -164,6 +166,7 @@ const Home: React.FC = memo(() => {
           description: project.description,
           applicationCategory: 'DeveloperApplication',
           ...(project.link ? { url: project.link } : {}),
+          ...(project.caseStudyPath ? { url: `${SITE_URL}${project.caseStudyPath}` } : {}),
           author: { '@id': personId },
         })),
       ],
