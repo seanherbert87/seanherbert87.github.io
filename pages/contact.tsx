@@ -4,7 +4,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import Form from '../components/form';
 
-const SITE_URL = 'https://seanherbert.me';
+const SITE_URL = 'https://www.seanherbert.me';
 const PAGE_URL = `${SITE_URL}/contact`;
 const PAGE_TITLE = 'Contact Sean Herbert | PHP, WordPress & C#/.NET Developer';
 const META_DESCRIPTION = 'Get in touch with Sean Herbert, a senior PHP, WordPress & C#/.NET developer with 15+ years of experience. Available for WordPress 7, WooCommerce, .NET 10, PostgreSQL, Supabase & full-stack web projects.';

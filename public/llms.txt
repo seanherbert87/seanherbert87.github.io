@@ -1,0 +1,25 @@
+# Sean Herbert
+
+> Sean Herbert is a senior full-stack developer (PHP, WordPress, WooCommerce, C#/.NET) with 15+ years of experience, based at Blackbird Digital Inc., where he is Director of Technology. He has built 800+ WordPress sites and 350+ WooCommerce sites, and recently ships privacy-first, self-hosted products.
+
+## Site
+
+- [Portfolio](https://www.seanherbert.me/): About, selected projects, work experience and skills
+- [Contact](https://www.seanherbert.me/contact): Contact form for project enquiries
+
+## Selected projects
+
+- [WP Local Consent](https://wplocalconsent.com): WordPress cookie consent plugin and script blocker that runs entirely from the site's own assets, with Google Consent Mode v2 support
+- [WP Local Accessibility](https://wplocalaccessibility.com): WordPress accessibility toolkit (visitor toolbar, on-site scanner, accessibility statement) with no third-party calls or telemetry
+- PixelVault: self-hosted, privacy-first photo and video organizer built on ASP.NET Core (.NET 10)
+- MedTrack: personal medication efficacy tracker built with Next.js, Supabase and Flutter
+
+## Profiles
+
+- [GitHub](https://github.com/seanherbert87/)
+- [LinkedIn](https://www.linkedin.com/in/seanmherbert/)
+- [Blackbird Digital Inc.](https://www.blackbird-digital.com)
+
+## Skills
+
+PHP 8.x, WordPress, WooCommerce, custom themes and plugins, C# / .NET 10, ASP.NET Core, Entity Framework Core, Blazor, React, Next.js, TypeScript, PostgreSQL, MySQL/MariaDB, Supabase, Flutter, Docker, GitHub Actions.
