@@ -11,8 +11,8 @@
 
 - [WP Local Consent](https://wplocalconsent.com): WordPress cookie consent plugin and script blocker that runs entirely from the site's own assets, with Google Consent Mode v2 support
 - [WP Local Accessibility](https://wplocalaccessibility.com): WordPress accessibility toolkit (visitor toolbar, on-site scanner, accessibility statement) with no third-party calls or telemetry
-- PixelVault: self-hosted, privacy-first photo and video organizer built on ASP.NET Core (.NET 10)
-- MedTrack: personal medication efficacy tracker built with Next.js, Supabase and Flutter
+- [PixelVault](https://www.seanherbert.me/projects/pixelvault): self-hosted, privacy-first photo and video organizer built on ASP.NET Core (.NET 10)
+- [MedTrack](https://www.seanherbert.me/projects/medtrack): personal medication efficacy tracker built with Next.js, Supabase and Flutter
 
 ## Profiles
 
