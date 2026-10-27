@@ -105,10 +105,10 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
         {study.sections.map((section) => (
           <Section key={section.title} title={section.title}>
             {section.paragraphs?.map((p) => (
-              <p key={p} className="mb-4 max-w-3xl">{p}</p>
+              <p key={p} className="mb-4">{p}</p>
             ))}
             {section.bullets && (
-              <ul className="list-disc pl-5 space-y-2 max-w-3xl marker:text-primary-600">
+              <ul className="list-disc pl-5 space-y-2 marker:text-primary-600">
                 {section.bullets.map((b) => (
                   <li key={b}>{b}</li>
                 ))}
