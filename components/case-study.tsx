@@ -7,6 +7,7 @@ import Layout from './layout';
 import Section from './section';
 
 const SITE_URL = 'https://www.seanherbert.me';
+const HOME_URL = `${SITE_URL}/`;
 const FULL_NAME = 'Sean Herbert';
 
 export interface CaseStudyData {
@@ -34,7 +35,7 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
         description: study.summary,
         url,
         inLanguage: 'en',
-        author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FULL_NAME, url: SITE_URL },
+        author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FULL_NAME, url: HOME_URL },
         about: { '@id': `${url}#software` },
         isPartOf: { '@id': `${SITE_URL}/#website` },
       },
@@ -49,7 +50,7 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: HOME_URL },
           { '@type': 'ListItem', position: 2, name: study.name, item: url },
         ],
       },
