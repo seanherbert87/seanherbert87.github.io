@@ -3,7 +3,11 @@ import React, { memo, useMemo, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Header from '../components/header';
 import Layout from '../components/layout';
+import Link from 'next/link';
+import { GetStaticProps } from 'next';
+import Section from '../components/section';
 import { Project, Experience, Skill } from '../types';
+import { getAllPosts, formatDate, PostMeta } from '../lib/posts';
 
 const SectionAbout = dynamic(() => import('../components/section-about'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
@@ -24,7 +28,11 @@ const FULL_NAME = 'Sean Herbert';
 const JOB_TITLE = 'Senior PHP, WordPress & C#/.NET Developer';
 const META_DESCRIPTION = 'Senior full-stack developer with 15+ years in PHP, WordPress 7, C#/.NET 10, React & TypeScript. Expert in WooCommerce, ASP.NET Core, PostgreSQL, Supabase & modern web development.';
 
-const Home: React.FC = memo(() => {
+interface HomeProps {
+  latestPosts: PostMeta[];
+}
+
+const Home: React.FC<HomeProps> = memo(({ latestPosts }) => {
   const about = useMemo(() =>
     `Hi, I'm Sean Herbert, a senior full-stack web developer with over ${new Date().getFullYear() - 2011} years of experience specializing in PHP, WordPress, C#/.NET, and modern JavaScript frameworks. I excel at building high-performance websites and web applications - from custom WordPress and WooCommerce solutions to enterprise-grade C#/.NET 10 applications using ASP.NET Core. My expertise spans custom WordPress theme and plugin development, PHP application architecture, C#/.NET application development, database optimization, and creating seamless user experiences. Recently I've been building privacy-first, self-hosted products: WordPress plugins that run entirely from a site's own server, a .NET-powered media organizer, and a cross-platform health tracker on Next.js, Supabase, and Flutter. I'm passionate about clean code, performance optimization, and delivering scalable solutions that drive business results. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.`,
     []
@@ -221,6 +229,31 @@ const Home: React.FC = memo(() => {
       <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {projects.length > 0 && <SectionProjects projects={projects} />}
       </Suspense>
+      {latestPosts.length > 0 && (
+        <Section title="Latest Writing">
+          <ul className="space-y-4">
+            {latestPosts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="font-medium text-gray-900 dark:text-gray-100 hover:text-primary-700 dark:hover:text-primary-300 hover:underline"
+                >
+                  {post.title}
+                </Link>
+                <p className="font-mono text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  {post.date ? formatDate(post.date) : 'Draft'} · {post.readingMinutes} min read
+                </p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/blog"
+            className="inline-block mt-6 font-mono text-xs text-primary-700 dark:text-primary-300 hover:underline"
+          >
+            All posts →
+          </Link>
+        </Section>
+      )}
       <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
         {experience && experience.length && (
           <SectionExperience experience={experience} />
@@ -234,5 +267,9 @@ const Home: React.FC = memo(() => {
 });
 
 Home.displayName = 'Home';
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => ({
+  props: { latestPosts: getAllPosts().slice(0, 3) },
+});
 
 export default Home;

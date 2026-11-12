@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
+import Link from 'next/link';
 
 const classes = {
   wrapper: 'relative min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300',
   backgroundGrid: 'bg-grid pointer-events-none absolute inset-x-0 top-0 h-[48rem]',
   container: 'relative max-w-4xl xl:max-w-6xl 2xl:max-w-7xl min-[2000px]:max-w-[90rem] mx-auto px-6 py-12 sm:px-8 lg:px-12',
-  footer: 'mt-24 pt-6 border-t border-gray-200 dark:border-gray-800 flex justify-between font-mono text-xs text-gray-600 dark:text-gray-400',
+  footer: 'mt-24 pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-wrap justify-between gap-x-6 gap-y-3 font-mono text-xs text-gray-600 dark:text-gray-400',
+  footerLink: 'hover:text-primary-700 dark:hover:text-primary-300 hover:underline',
 };
 
 interface LayoutProps {
@@ -19,6 +21,11 @@ const Layout: React.FC<LayoutProps> = memo(({ children }) => {
         {children}
         <footer className={classes.footer}>
           <span>© {new Date().getFullYear()} Sean Herbert</span>
+          <nav aria-label="Footer" className="flex gap-4">
+            <Link href="/" className={classes.footerLink}>Home</Link>
+            <Link href="/blog" className={classes.footerLink}>Blog</Link>
+            <Link href="/contact" className={classes.footerLink}>Contact</Link>
+          </nav>
           <span>Illinois, USA · seanherbert.me</span>
         </footer>
       </main>
