@@ -6,6 +6,7 @@
 
 - [Portfolio](https://www.seanherbert.me/): About, selected projects, work experience and skills
 - [Contact](https://www.seanherbert.me/contact): Contact form for project enquiries
+- [Blog](https://www.seanherbert.me/blog): Articles on WordPress plugin development, .NET, Next.js/Supabase and privacy-first software
 
 ## Selected projects
 
