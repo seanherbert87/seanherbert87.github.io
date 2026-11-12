@@ -55,3 +55,56 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Rendered markdown for blog posts */
+.post-body {
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+}
+
+.post-body > * + * {
+  @apply mt-4;
+}
+
+.post-body h2 {
+  @apply mt-12 mb-4 text-xl font-semibold tracking-tight text-gray-900 dark:text-white;
+}
+
+.post-body h3 {
+  @apply mt-8 mb-3 text-lg font-semibold tracking-tight text-gray-900 dark:text-white;
+}
+
+.post-body a {
+  @apply text-primary-700 dark:text-primary-300 underline underline-offset-2 hover:no-underline;
+}
+
+.post-body strong {
+  @apply font-semibold text-gray-900 dark:text-gray-100;
+}
+
+.post-body ul {
+  @apply list-disc pl-5 space-y-2 marker:text-primary-600;
+}
+
+.post-body ol {
+  @apply list-decimal pl-5 space-y-2 marker:text-primary-600;
+}
+
+.post-body code {
+  @apply px-1 py-0.5 rounded-sm bg-gray-100 dark:bg-gray-800 font-mono text-[0.85em];
+}
+
+.post-body pre {
+  @apply p-4 overflow-x-auto rounded-md border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900;
+}
+
+.post-body pre code {
+  @apply p-0 bg-transparent;
+}
+
+.post-body blockquote {
+  @apply pl-4 border-l-2 border-primary-300 dark:border-primary-800 italic;
+}
+
+.post-body hr {
+  @apply my-10 border-gray-200 dark:border-gray-800;
+}
