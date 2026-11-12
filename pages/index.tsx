@@ -208,7 +208,6 @@ const Home: React.FC = memo(() => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Suspense fallback={<div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>}>
