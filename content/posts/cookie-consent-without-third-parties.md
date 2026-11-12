@@ -2,7 +2,7 @@
 title: "Cookie consent without the third-party calls: building WP Local Consent"
 description: "Why I built a WordPress cookie consent plugin that loads nothing from outside the site, and how I kept the banner under 10 KB of JavaScript."
 author: Sean Herbert
-draft: true
+date: 2026-11-11
 tags: [WordPress, PHP, Privacy, Performance, Google Consent Mode]
 ---
 
