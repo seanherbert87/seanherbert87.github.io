@@ -23,7 +23,7 @@ PixelVault uses **perceptual hashing**. Each image gets a compact fingerprint of
 
 ## Editing without destroying originals
 
-Edits are **non-destructive**: the original file is never overwritten, and adjustments are stored and applied on top. Video processing is handled with **ffmpeg**.
+Edits are **non-destructive**: the original file on disk is never modified. Rotation is stored as a setting on the item and applied when thumbnails and originals are served, while a crop creates a new item and leaves the original alone. Video thumbnails and duration metadata come from **ffmpeg**, and photos (including HEIC and AVIF) are decoded in-process.
 
 ## Security when the data is this personal
 
@@ -36,7 +36,7 @@ A personal photo library is about as sensitive as data gets, so security wasn't 
 
 ## Remote access without exposing the server
 
-The usual way to reach a home server from outside is to open a port and put it on the public internet. PixelVault avoids that by using **Tailscale**: the service is only reachable over a private, encrypted network between my own devices. With nothing publicly exposed, there's far less attack surface.
+The usual way to reach a home server from outside is to open a port and put it on the public internet. PixelVault is designed around **Tailscale** instead: remote access runs over a private, encrypted network between my own devices, with no port forwarding or router changes (it even works behind CGNAT). The setup wizard configures it and generates a QR code for the mobile app. With nothing deliberately exposed to the public internet, there's far less attack surface.
 
 ## Takeaways
 
