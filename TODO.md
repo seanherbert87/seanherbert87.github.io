@@ -8,6 +8,8 @@
 - [ ] Footer credit + author schema on wplocalaccessibility.com linking to seanherbert.me
 - [ ] Staff/bio page on blackbird-digital.com (pending employer decision)
 - [ ] Update LinkedIn About/bio and add the site to the Featured section
-- [ ] Add a blog/articles section and publish the first posts
+- [x] Add a blog section (`/blog`, Markdown posts, build-time sitemap)
+- [ ] Fact-check and publish the three draft posts in `content/posts/` (set `date`, remove `draft`)
+- [ ] Add an RSS feed for the blog
 - [ ] Decide whether to keep the "100% Client Satisfaction" stat
 - [ ] Create a 1200×630 social share image and switch to `summary_large_image`
