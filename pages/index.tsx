@@ -141,6 +141,11 @@ const Home: React.FC = memo(() => {
           jobTitle: JOB_TITLE,
           description: META_DESCRIPTION,
           url: HOME_URL,
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'IL',
+            addressCountry: 'US',
+          },
           image: {
             '@type': 'ImageObject',
             url: `${SITE_URL}/profile-photo.jpg`,
