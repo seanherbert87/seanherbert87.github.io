@@ -2,7 +2,7 @@
 title: "One product, five platforms: Next.js, Supabase and Flutter in MedTrack"
 description: "How MedTrack, a personal medication efficacy tracker, runs on the web, iOS, Android, macOS and Windows from one Supabase backend, with offline-first clients and shared rules enforced in PostgreSQL."
 author: Sean Herbert
-draft: true
+date: 2026-11-11
 tags: [Next.js, TypeScript, Supabase, PostgreSQL, Flutter]
 ---
 

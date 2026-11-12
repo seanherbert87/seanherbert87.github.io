@@ -2,7 +2,7 @@
 title: "Building a self-hosted photo library on .NET 10: notes from PixelVault"
 description: "Design notes from PixelVault, a privacy-first photo and video organizer built with ASP.NET Core: perceptual-hash duplicates, signed media URLs, and remote access without opening a port."
 author: Sean Herbert
-draft: true
+date: 2026-11-11
 tags: [C#, .NET 10, ASP.NET Core, Security, Self-hosting]
 ---
 
