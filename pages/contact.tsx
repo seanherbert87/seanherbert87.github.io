@@ -34,7 +34,6 @@ const Contact: React.FC = () => {
         <meta name="twitter:description" content={META_DESCRIPTION} />
         <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
 
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Form />

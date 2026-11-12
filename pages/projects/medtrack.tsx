@@ -8,6 +8,7 @@ const study: CaseStudyData = {
   summary:
     'MedTrack is a personal medication efficacy tracker built with Next.js and Supabase (PostgreSQL), sharing business logic with native Flutter apps for iOS, Android, macOS and Windows.',
   year: '2026',
+  datePublished: '2026-10-26',
   applicationCategory: 'HealthApplication',
   technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Flutter'],
   sections: [

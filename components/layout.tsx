@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = memo(({ children }) => {
         {children}
         <footer className={classes.footer}>
           <span>© {new Date().getFullYear()} Sean Herbert</span>
-          <span>seanherbert.me</span>
+          <span>Illinois, USA · seanherbert.me</span>
         </footer>
       </main>
     </div>

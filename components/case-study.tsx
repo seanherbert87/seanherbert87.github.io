@@ -7,6 +7,7 @@ import Layout from './layout';
 import Section from './section';
 
 const SITE_URL = 'https://www.seanherbert.me';
+const HOME_URL = `${SITE_URL}/`;
 const FULL_NAME = 'Sean Herbert';
 
 export interface CaseStudyData {
@@ -15,6 +16,7 @@ export interface CaseStudyData {
   tagline: string;
   summary: string;
   year: string;
+  datePublished: string;
   applicationCategory: string;
   technologies: string[];
   sections: { title: string; paragraphs?: string[]; bullets?: string[] }[];
@@ -31,10 +33,11 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
         '@type': 'TechArticle',
         '@id': `${url}#article`,
         headline: `${study.name}: ${study.tagline}`,
+        datePublished: study.datePublished,
         description: study.summary,
         url,
         inLanguage: 'en',
-        author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FULL_NAME, url: SITE_URL },
+        author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FULL_NAME, url: HOME_URL },
         about: { '@id': `${url}#software` },
         isPartOf: { '@id': `${SITE_URL}/#website` },
       },
@@ -49,7 +52,7 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: HOME_URL },
           { '@type': 'ListItem', position: 2, name: study.name, item: url },
         ],
       },
@@ -65,6 +68,8 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={study.datePublished} />
+        <meta property="article:author" content={HOME_URL} />
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={study.summary} />
@@ -88,7 +93,12 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
           Back to portfolio
         </Link>
         <div className="mb-12">
-          <p className="font-mono text-xs text-gray-600 dark:text-gray-400 mb-2">Case study · {study.year}</p>
+          <p className="font-mono text-xs text-gray-600 dark:text-gray-400 mb-2">
+            Case study · {study.year} · By{' '}
+            <Link href="/" rel="author" className="text-primary-700 dark:text-primary-300 hover:underline">
+              {FULL_NAME}
+            </Link>
+          </p>
           <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white mb-3">{study.name}</h2>
           <p className="text-lg font-light text-gray-700 dark:text-gray-300 mb-6">{study.tagline}</p>
           <div className="flex flex-wrap gap-2">

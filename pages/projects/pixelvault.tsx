@@ -8,6 +8,7 @@ const study: CaseStudyData = {
   summary:
     "PixelVault is a self-hosted photo and video organizer built on ASP.NET Core (.NET 10), with albums, hierarchical tags, duplicate detection and non-destructive editing. All media stays on the owner's hardware.",
   year: '2026',
+  datePublished: '2026-10-26',
   applicationCategory: 'MultimediaApplication',
   technologies: ['C#', '.NET 10', 'ASP.NET Core', 'Tailscale', 'ffmpeg'],
   sections: [
