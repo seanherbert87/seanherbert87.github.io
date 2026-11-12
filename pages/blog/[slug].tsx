@@ -5,7 +5,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
-import { getPost, getPostSlugs, formatDate, Post } from '../../lib/posts';
+import { getPost, getPostSlugs } from '../../lib/posts';
+import type { Post } from '../../lib/posts';
+import { formatDate } from '../../lib/format-date';
 
 const SITE_URL = 'https://www.seanherbert.me';
 const HOME_URL = `${SITE_URL}/`;

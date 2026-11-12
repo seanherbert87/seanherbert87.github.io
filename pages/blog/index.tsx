@@ -5,7 +5,9 @@ import { GetStaticProps } from 'next';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
 import Section from '../../components/section';
-import { getAllPosts, formatDate, PostMeta } from '../../lib/posts';
+import { getAllPosts } from '../../lib/posts';
+import type { PostMeta } from '../../lib/posts';
+import { formatDate } from '../../lib/format-date';
 
 const SITE_URL = 'https://www.seanherbert.me';
 const HOME_URL = `${SITE_URL}/`;

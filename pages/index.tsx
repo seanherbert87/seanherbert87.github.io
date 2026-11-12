@@ -7,7 +7,9 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import Section from '../components/section';
 import { Project, Experience, Skill } from '../types';
-import { getAllPosts, formatDate, PostMeta } from '../lib/posts';
+import { getAllPosts } from '../lib/posts';
+import type { PostMeta } from '../lib/posts';
+import { formatDate } from '../lib/format-date';
 
 const SectionAbout = dynamic(() => import('../components/section-about'), {
   loading: () => <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-md mb-8"></div>
