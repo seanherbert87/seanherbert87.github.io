@@ -15,7 +15,7 @@
 - [x] Add a blog section (`/blog`, Markdown posts, build-time sitemap)
 - [x] Fact-check and publish the three draft posts in `content/posts/`
 - [x] Add an RSS feed for the blog (`/blog/feed.xml`)
-- [ ] Decide whether to keep the "100% Client Satisfaction" stat
+- [x] Remove the "100% Client Satisfaction" stat
 - [x] Create a 1200×630 social share image and switch to `summary_large_image`
 
 ## Analytics
