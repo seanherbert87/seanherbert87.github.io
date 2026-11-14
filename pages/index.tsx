@@ -204,18 +204,18 @@ const Home: React.FC<HomeProps> = memo(({ latestPosts }) => {
         <meta property="og:url" content={HOME_URL} />
         <meta property="og:title" content={`${FULL_NAME} | ${JOB_TITLE}`} />
         <meta property="og:description" content={META_DESCRIPTION} />
-        <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        <meta property="og:image:alt" content={`${FULL_NAME} profile photo`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${FULL_NAME}, Senior PHP, WordPress & C#/.NET Developer`} />
         <meta property="og:site_name" content={`${FULL_NAME} — Portfolio`} />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter / X Card */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${FULL_NAME} | ${JOB_TITLE}`} />
         <meta name="twitter:description" content={META_DESCRIPTION} />
-        <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
 
         {/* JSON-LD structured data */}
         <script

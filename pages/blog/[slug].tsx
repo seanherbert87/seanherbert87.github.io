@@ -35,7 +35,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
         ...(post.date ? { datePublished: post.date } : {}),
         ...(post.updated || post.date ? { dateModified: post.updated ?? post.date } : {}),
         keywords: post.tags.join(', '),
-        image: `${SITE_URL}/profile-photo.jpg`,
+        image: { '@type': 'ImageObject', url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 },
         author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FULL_NAME, url: HOME_URL },
         publisher: { '@id': `${SITE_URL}/#person` },
         isPartOf: { '@id': `${SITE_URL}/blog#blog` },
@@ -72,14 +72,16 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={post.description} />
-        <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
-        <meta property="og:image:alt" content={`${FULL_NAME} profile photo`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${FULL_NAME}, Senior PHP, WordPress & C#/.NET Developer`} />
         <meta property="og:site_name" content={`${FULL_NAME} — Portfolio`} />
         <meta property="og:locale" content="en_US" />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={post.description} />
-        <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
       <Header />
