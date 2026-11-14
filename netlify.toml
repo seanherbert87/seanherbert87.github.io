@@ -34,6 +34,20 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Umami analytics, proxied so the browser only talks to seanherbert.me.
+# Must stay above the catch-all 404 rule.
+[[redirects]]
+  from = "/stats/script.js"
+  to = "https://cloud.umami.is/script.js"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/stats/api/send"
+  to = "https://cloud.umami.is/api/send"
+  status = 200
+  force = true
+
 # Serve 404 for unmatched routes
 [[redirects]]
   from = "/*"
