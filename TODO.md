@@ -25,4 +25,5 @@
 
 ## Contact form
 
-- [ ] Wire up the contact form: `handleSubmit` in `components/form.tsx` only simulates a send, so messages are never delivered
+- [x] Wire the contact form to Netlify Forms (it previously only simulated a send)
+- [ ] Enable form detection and add an email notification for the `contact` form in Netlify

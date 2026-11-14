@@ -2,6 +2,18 @@ import React, { useState, FormEvent } from 'react';
 import Section from './section';
 import { ContactFormData, ContactFormErrors } from '../types';
 
+// Netlify Forms: the form is declared for detection in public/__forms.html, and submissions are
+// POSTed there as URL-encoded data. FORM_NAME must match the `name` on that hidden form.
+const FORM_NAME = 'contact';
+const FORM_ENDPOINT = '/__forms.html';
+
+// Umami's tracker (loaded in _document when analytics is configured)
+declare global {
+  interface Window {
+    umami?: { track: (event: string) => void };
+  }
+}
+
 const Form: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -68,12 +80,21 @@ const Form: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simulate form submission - replace with your preferred method
-      // Options: Netlify Forms, Formspree, EmailJS, or custom backend
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      // For now, just show success message
-      // In production, you would integrate with your preferred form service
+      // FormData includes the hidden honeypot field, which Netlify uses to discard bot submissions.
+      const payload = new FormData(e.currentTarget);
+      payload.set('form-name', FORM_NAME);
+
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(payload as unknown as Record<string, string>).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      window.umami?.track('contact-submit');
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -100,11 +121,26 @@ const Form: React.FC = () => {
 
         {submitStatus === 'error' && (
           <div className="mb-6 p-4 border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-200 rounded-sm">
-            Sorry, there was an error sending your message. Please try again or contact me directly.
+            Sorry, there was an error sending your message. Please try again, or message me on{' '}
+            <a
+              href="https://www.linkedin.com/in/seanmherbert/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline"
+            >
+              LinkedIn
+            </a>
+            .
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form name={FORM_NAME} onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot: hidden from people, often filled in by bots. */}
+          <p className="hidden" aria-hidden="true">
+            <label>
+              Leave this field empty: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+            </label>
+          </p>
           <div>
             <label htmlFor="name" className="block font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
               Name *
