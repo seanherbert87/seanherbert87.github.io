@@ -34,6 +34,16 @@ local and deploy-preview visits aren't recorded.
 To enable it, add the site in Umami with the domain `www.seanherbert.me`, copy its website ID
 into `NEXT_PUBLIC_UMAMI_WEBSITE_ID` in Netlify, and redeploy.
 
+### Contact form (Netlify Forms)
+
+The contact form is declared for Netlify's form detection in `public/__forms.html` (a hidden
+copy, because the real form is rendered by React). `components/form.tsx` POSTs submissions there
+as URL-encoded data with `form-name=contact`. A hidden `bot-field` input acts as a honeypot.
+If you add or rename a field, update both files.
+
+In Netlify, enable form detection (Forms) and add an email notification for the `contact` form
+(Forms → contact → Form notifications) so submissions reach your inbox.
+
 ## Build & deploy
 
 ```bash
