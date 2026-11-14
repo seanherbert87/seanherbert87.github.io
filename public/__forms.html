@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <!--
+      Netlify Forms detection only. Netlify registers forms by scanning deployed HTML, and the
+      real contact form (components/form.tsx) is rendered by React, so this hidden copy declares
+      it. Field names must match the React form. The React form submits here via fetch.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
