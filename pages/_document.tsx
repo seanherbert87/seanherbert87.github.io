@@ -11,6 +11,7 @@ export default function Document() {
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="alternate" type="application/rss+xml" title="Sean Herbert — Blog" href="/blog/feed.xml" />
         {/* Cookieless Umami analytics, proxied through /stats by netlify.toml so no third-party
             domain is contacted. Only rendered when the website ID is set at build time, and
             data-domains limits recording to the production host. */}

@@ -82,6 +82,11 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
       </Head>
       <Header />
       <Section title="Blog">
+        <p className="mb-6 font-mono text-xs">
+          <a href="/blog/feed.xml" className="text-primary-700 dark:text-primary-300 hover:underline">
+            Subscribe via RSS
+          </a>
+        </p>
         {posts.length === 0 ? (
           <p>No posts yet. Check back soon.</p>
         ) : (
