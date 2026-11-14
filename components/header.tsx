@@ -58,7 +58,6 @@ const Header: React.FC = memo(() => {
     { value: `${new Date().getFullYear() - 2011}+`, label: 'Years Experience' },
     { value: '800+', label: 'WordPress Sites' },
     { value: '350+', label: 'WooCommerce Sites' },
-    { value: '100%', label: 'Client Satisfaction' },
   ];
 
   return (
@@ -182,9 +181,9 @@ const Header: React.FC = memo(() => {
       )}
 
       {/* Quick Stats */}
-      <dl className="grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-200 dark:bg-gray-800 rounded-md">
+      <dl className="grid grid-cols-3 gap-px overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-200 dark:bg-gray-800 rounded-md">
         {stats.map(({ value, label }) => (
-          <div key={label} className="px-5 py-4 bg-white dark:bg-gray-900">
+          <div key={label} className="px-3 sm:px-5 py-4 bg-white dark:bg-gray-900">
             <dt className="font-mono text-[0.7rem] uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-1">{label}</dt>
             <dd className="font-mono text-2xl font-medium text-primary-700 dark:text-primary-300">{value}</dd>
           </div>
