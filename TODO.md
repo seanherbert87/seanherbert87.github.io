@@ -6,7 +6,7 @@
 - [x] Request indexing and submit the sitemap in Google Search Console
 - [x] Footer credit + author schema on wplocalconsent.com linking to seanherbert.me
 - [x] Footer credit + author schema on wplocalaccessibility.com linking to seanherbert.me
-- [ ] Point both plugins' `Author URI` headers at seanherbert.me
+- [x] Point both plugins' `Author URI` headers at seanherbert.me
 - [x] Set up Bing Webmaster Tools
 - [ ] Create a GitHub profile README (`seanherbert87/seanherbert87`) linking to the site and blog
 - [ ] Cross-post blog posts to dev.to / Hashnode with canonical URLs pointing here
@@ -26,4 +26,4 @@
 ## Contact form
 
 - [x] Wire the contact form to Netlify Forms (it previously only simulated a send)
-- [ ] Enable form detection and add an email notification for the `contact` form in Netlify
+- [x] Enable form detection and add an email notification for the `contact` form in Netlify
