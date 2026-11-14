@@ -73,14 +73,16 @@ const CaseStudy: React.FC<{ study: CaseStudyData }> = ({ study }) => {
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={study.summary} />
-        <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
-        <meta property="og:image:alt" content={`${FULL_NAME} profile photo`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${FULL_NAME}, Senior PHP, WordPress & C#/.NET Developer`} />
         <meta property="og:site_name" content={`${FULL_NAME} — Portfolio`} />
         <meta property="og:locale" content="en_US" />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={study.summary} />
-        <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
       <Header />

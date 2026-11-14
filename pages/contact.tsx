@@ -23,16 +23,18 @@ const Contact: React.FC = () => {
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={META_DESCRIPTION} />
-        <meta property="og:image" content={`${SITE_URL}/profile-photo.jpg`} />
-        <meta property="og:image:alt" content="Sean Herbert profile photo" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Sean Herbert, Senior PHP, WordPress & C#/.NET Developer" />
         <meta property="og:site_name" content="Sean Herbert — Portfolio" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter / X Card */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={META_DESCRIPTION} />
-        <meta name="twitter:image" content={`${SITE_URL}/profile-photo.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
 
       </Head>
       <Header />
