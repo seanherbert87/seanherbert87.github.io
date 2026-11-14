@@ -17,17 +17,37 @@ npm run dev        # http://localhost:3000
 
 ## Environment variables
 
-None. The site is fully static and has no runtime configuration.
+All are read at build time and inlined into the static export. Set them in Netlify under
+Site configuration → Environment variables.
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | No | Umami website ID. When unset, no analytics script is rendered. |
+
+### Analytics (Umami)
+
+Analytics use [Umami Cloud](https://umami.is), which is cookieless, so no consent banner is
+needed. The browser never contacts Umami directly: `netlify.toml` proxies `/stats/script.js` and
+`/stats/api/send` to `cloud.umami.is`. The script tag has `data-domains="www.seanherbert.me"`, so
+local and deploy-preview visits aren't recorded.
+
+To enable it, add the site in Umami with the domain `www.seanherbert.me`, copy its website ID
+into `NEXT_PUBLIC_UMAMI_WEBSITE_ID` in Netlify, and redeploy.
 
 ## Build & deploy
 
 ```bash
-npm run build      # static export to out/, then writes out/sitemap.xml
+npm run build      # static export to out/, then writes out/sitemap.xml and out/blog/feed.xml
 ```
 
-`npm run build` runs `next build` and then the `postbuild` script
-(`scripts/generate-sitemap.mjs`), which writes the sitemap from the static page list in that
-script plus every published blog post.
+`npm run build` runs `next build` and then the `postbuild` scripts:
+
+- `scripts/generate-sitemap.mjs` writes the sitemap from the static page list in that script
+  plus every published blog post.
+- `scripts/generate-feed.mjs` writes the RSS feed (`/blog/feed.xml`) with every published post.
+
+The social share image `public/og-image.png` (1200×630) is committed. Regenerate it with
+`node scripts/generate-og-image.mjs` after changing the name, title or profile photo.
 
 Netlify builds `main` with `npm run build` and publishes `out/` (see `netlify.toml`).
 
@@ -63,4 +83,4 @@ Body in Markdown. Start with `##` headings; the page renders the title itself.
 | `lib/posts.ts` | Reads and renders Markdown posts at build time (Node only) |
 | `content/posts/` | Blog post Markdown |
 | `public/` | Static assets, `robots.txt`, `llms.txt` |
-| `scripts/` | Icon and sitemap generation |
+| `scripts/` | Icon, share-image, sitemap and RSS feed generation |
