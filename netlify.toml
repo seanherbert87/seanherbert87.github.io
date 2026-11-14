@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+  # Skip the build when only documentation changed (exit 0 = skip). Only root-level *.md is
+  # excluded, because blog posts in content/posts/*.md must still trigger a build.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude,glob)*.md' ':!.gitignore' ':!docs/' ':!LICENCE' ':!.github/ISSUE_TEMPLATE/' ':!.github/pull_request_template.md'"
 
 [build.environment]
   NODE_VERSION = "22"
